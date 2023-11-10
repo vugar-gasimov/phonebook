@@ -7,22 +7,28 @@ import {
 } from './LoginStyled';
 import { useForm } from 'react-hook-form';
 
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectUser } from 'Redux/Auth/selectors';
 import { loginThunk } from 'Redux/Auth/operations';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const { name } = useSelector(selectUser);
-  const { register, reset, handleSubmit } = useForm;
+  const { register, reset, handleSubmit } = useForm();
 
   const submit = data => {
     dispatch(loginThunk(data));
-    reset();
+    // reset();
   };
+
+  const handleExit = () => {
+    navigate('/');
+  };
+
   if (isLoggedIn) {
     toast.success(`Welcome ${name}`);
 
@@ -31,8 +37,10 @@ const Login = () => {
   return (
     <Flex>
       <StyledLoginForm onSubmit={handleSubmit(submit)}>
-        <StyledTitle>Register</StyledTitle>
-
+        <StyledTitle>Login</StyledTitle>
+        <button onClick={handleExit} type="button">
+          Exit
+        </button>
         <br />
         <StyledLabel>
           Email:
@@ -49,9 +57,7 @@ const Login = () => {
         </StyledLabel>
         <br />
 
-        <br />
-
-        <button type="button">Login</button>
+        <button type="submit">Login</button>
         <button onClick={() => reset()} type="button">
           Cancel
         </button>

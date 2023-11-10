@@ -11,26 +11,26 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <HeaderContainer>
-      <nav>
-        <div>
+      <NavContainer>
+        <LinkContainer>
           <StyledNavLink to="/">Home</StyledNavLink>
           <StyledNavLink to="/contacts">Phone book</StyledNavLink>
-        </div>
-        <div>
+        </LinkContainer>
+        <NavLinkContainer>
           <StyledNavLink to="/about">About us</StyledNavLink>
           {!isLoggedIn ? (
-            <div>
+            <LinkContainer>
               <StyledNavLink to="/register">Sign up</StyledNavLink>
               <StyledNavLink to="/login">Login</StyledNavLink>
-            </div>
+            </LinkContainer>
           ) : (
-            <div>
+            <LinkContainer>
               <span>{name}</span>
               <button onClick={() => dispatch(logoutThunk())}>Logout</button>
-            </div>
+            </LinkContainer>
           )}
-        </div>
-      </nav>
+        </NavLinkContainer>
+      </NavContainer>
     </HeaderContainer>
   );
 };
@@ -38,9 +38,6 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 20px 20px;
   background: linear-gradient(
     0deg,
@@ -52,6 +49,22 @@ const HeaderContainer = styled.div`
   width: -webkit-fill-available;
 `;
 
+const LinkContainer = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+const NavContainer = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+const NavLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+`;
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: #c850c0;

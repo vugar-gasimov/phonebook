@@ -12,13 +12,14 @@ import { LoadingWrapper } from './PhoneBook/PhoneBookStyled';
 import { useDispatch } from 'react-redux';
 import Home from 'Pages/Home';
 import About from 'Pages/About';
+import { refreshThunk } from 'Redux/Auth/operations';
 
 const PhoneBook = lazy(() => import('./PhoneBook/PhoneBook'));
 const App = () => {
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(refreshThunk())
-  // }, [dispatch])
+  useEffect(() => {
+    dispatch(refreshThunk());
+  }, [dispatch]);
   return (
     <Wrapper>
       <Routes>
@@ -31,8 +32,8 @@ const App = () => {
           }
         >
           <Route index element={<Home />} />
-          <Route payh="/contacts" element={<PhoneBook />} />
-          <Route payh="/about" element={<About />} />
+          <Route path="/contacts" element={<PhoneBook />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>

@@ -130,8 +130,8 @@ export const ButtonsContainer = styled.div`
 export const PhoneBookTitle = styled.h1`
   font-size: 24px;
   margin: 0;
-  color: ${props => (props.active ? '#FFF' : '#000')};
-  text-shadow: 0 0 3px ${props => (props.active ? '#FFF' : 'none')};
+  color: ${props => (props.$active ? '#FFF' : '#000')};
+  text-shadow: 0 0 3px ${props => (props.$active ? '#FFF' : 'none')};
 `;
 export const PhoneBookContactTitle = styled.h2`
   font-size: 24px;

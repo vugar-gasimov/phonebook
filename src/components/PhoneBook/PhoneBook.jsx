@@ -48,7 +48,7 @@ const PhoneBook = () => {
   return (
     <PhoneBookMainContainer>
       <PhoneBookContainer>
-        <PhoneBookTitle active={lampActive}>
+        <PhoneBookTitle $active={lampActive}>
           PhoneBook <Phone strokeWidth={1.5} />
         </PhoneBookTitle>
         <ContactForm
