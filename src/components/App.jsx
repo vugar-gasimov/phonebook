@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import Home from 'Pages/Home';
 import About from 'Pages/About';
 import { refreshThunk } from 'Redux/Auth/operations';
+import { PrivateRoute } from 'Hoc/PrivateRoute';
 
 const PhoneBook = lazy(() => import('./PhoneBook/PhoneBook'));
 const App = () => {
@@ -32,7 +33,15 @@ const App = () => {
           }
         >
           <Route index element={<Home />} />
-          <Route path="/contacts" element={<PhoneBook />} />
+
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute>
+                <PhoneBook />
+              </PrivateRoute>
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
