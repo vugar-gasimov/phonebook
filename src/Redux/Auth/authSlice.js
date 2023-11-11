@@ -11,8 +11,11 @@ const initialState = {
     name: '',
     email: '',
   },
+
   token: '',
   isLoggedIn: false,
+  isRefreshing: false,
+  error: null,
 };
 
 const authSlice = createSlice({
@@ -30,7 +33,30 @@ const authSlice = createSlice({
         state.user.name = payload.name;
         state.user.email = payload.email;
         state.isLoggedIn = true;
+        state.isRefreshing = false;
       })
+      .addMatcher(
+        isAnyOf(
+          registerThunk.pending,
+          loginThunk.pending,
+          refreshThunk.pending
+        ),
+        (state, { payload }) => {
+          state.isRefreshing = true;
+          state.error = payload;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          registerThunk.rejected,
+          loginThunk.rejected,
+          refreshThunk.rejected
+        ),
+        (state, { payload }) => {
+          state.isRefreshing = false;
+          state.error = payload;
+        }
+      )
       .addMatcher(
         isAnyOf(registerThunk.fulfilled, loginThunk.fulfilled),
         (state, { payload }) => {
@@ -38,6 +64,7 @@ const authSlice = createSlice({
           state.user.email = payload.user.email;
           state.token = payload.token;
           state.isLoggedIn = true;
+          state.error = '';
         }
       );
   },

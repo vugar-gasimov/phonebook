@@ -4,10 +4,15 @@ import {
   StyledLoginForm,
   StyledTitle,
   Flex,
+  BtnContainerOne,
+  ButtonsStyled,
+  BtnContainerTwo,
+  Span,
+  LinkStyled,
 } from './RegisterStyled';
 import { useForm } from 'react-hook-form';
 
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerThunk } from 'Redux/Auth/operations';
 import { selectIsLoggedIn } from 'Redux/Auth/selectors';
@@ -33,10 +38,13 @@ const Register = () => {
   return (
     <Flex>
       <StyledLoginForm onSubmit={handleSubmit(submit)}>
+        <BtnContainerOne>
+          <ButtonsStyled onClick={handleExit} type="button">
+            Exit
+          </ButtonsStyled>
+        </BtnContainerOne>
         <StyledTitle>Sign up</StyledTitle>
-        <button onClick={handleExit} type="button">
-          Exit
-        </button>
+
         <br />
         <StyledLabel>
           Name:
@@ -53,18 +61,21 @@ const Register = () => {
           <StyledInput {...register('password', { required: true })} />
         </StyledLabel>
         <br />
+        <BtnContainerTwo>
+          {' '}
+          <ButtonsStyled type="submit">Sign up</ButtonsStyled>
+          <ButtonsStyled onClick={() => reset()} type="button">
+            Clean
+          </ButtonsStyled>
+        </BtnContainerTwo>
 
-        <button type="submit">Sign up</button>
-        <button onClick={() => reset()} type="button">
-          Cancel
-        </button>
         <br />
-        <span>
+        <Span>
           If you already have an account
           <span>
-            <Link>Login</Link>
+            <LinkStyled to="/login">Login</LinkStyled>
           </span>
-        </span>
+        </Span>
       </StyledLoginForm>
     </Flex>
   );

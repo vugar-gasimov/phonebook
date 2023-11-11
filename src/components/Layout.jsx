@@ -23,4 +23,5 @@ export default Layout;
 
 const WrapperOutlet = styled.main`
   padding: 20px;
+  min-height: 700px;
 `;

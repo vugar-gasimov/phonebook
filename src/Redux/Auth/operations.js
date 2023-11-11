@@ -9,7 +9,7 @@ const setToken = token => {
   phoneBookApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-const clearToken = () => {
+const clearToken = token => {
   phoneBookApi.defaults.headers.common.Authorization = '';
 };
 
@@ -55,7 +55,7 @@ export const refreshThunk = createAsyncThunk('refresh', async (_, thunkApi) => {
   }
   try {
     setToken(savedToken);
-    const { data } = await phoneBookApi.get('users/me');
+    const { data } = await phoneBookApi.get('users/current');
     return data;
   } catch (e) {
     return thunkApi.rejectWithValue(e.message);
