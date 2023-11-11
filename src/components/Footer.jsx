@@ -80,7 +80,7 @@ const FooterLinks = styled.ul`
     flex-direction: column;
   }
   @media screen and (min-width: 1000px) {
-    gap: 80px;
+    gap: 200px;
   }
 `;
 
