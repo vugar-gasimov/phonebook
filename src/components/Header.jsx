@@ -14,7 +14,7 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <HeaderContainer>
-      <NavContainer>
+      <NavContainer transition={{ delay: 0.7 }}>
         <LinkContainer>
           <StyledNavLink
             to="/"
@@ -90,7 +90,7 @@ const LinkContainer = styled(motion.div)`
   gap: 15px;
 `;
 
-const NavContainer = styled.nav`
+const NavContainer = styled(motion.nav)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,7 +109,7 @@ const NavLinkContainer = styled(motion.div)`
     flex-direction: row;
   }
 `;
-const StyledNavLink = styled(motion.NavLink)`
+const StyledNavLink = styled(motion(NavLink))`
   text-decoration: none;
   color: #8338ec;
   font-size: 30px;

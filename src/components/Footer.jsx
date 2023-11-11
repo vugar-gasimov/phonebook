@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer transition={{ delay: 0.7 }}>
       <FooterLinks
         initial={{ y: '+100vh', color: '#3f22ff' }}
         animate={{ y: 0, color: '#9422ff' }}
@@ -45,7 +45,7 @@ const Footer = () => {
           <StyledNavLink
             initial={{ x: '+100vw', color: '#3f22ff' }}
             animate={{ x: 0, color: '#9422ff' }}
-            transition={{ duration: 0.7 }}
+            transition={{ delay: 0.5, duration: 0.7 }}
             href="#"
           >
             Contacts
@@ -55,7 +55,11 @@ const Footer = () => {
 
       <br />
       <FooterContentWrapper>
-        <FooterContent>
+        <FooterContent
+          initial={{ y: +50, color: '#3f22ff' }}
+          animate={{ y: 0, color: '#9422ff' }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           <p>&copy; 2023 CyberTask Hub. All rights reserved.</p>
           <br />
           <p>Contact us: contact@cybertaskhub.com</p>
@@ -67,7 +71,7 @@ const Footer = () => {
 
 export default Footer;
 
-const FooterContainer = styled.div`
+const FooterContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,7 +87,7 @@ const FooterContainer = styled.div`
   width: -webkit-fill-available;
 `;
 
-const FooterContent = styled.div`
+const FooterContent = styled(motion.div)`
   color: #a581d7;
   padding: 10px;
   text-align: center;

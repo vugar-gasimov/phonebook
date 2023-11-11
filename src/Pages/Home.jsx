@@ -14,7 +14,7 @@ const Home = () => {
       <Subtitle
         initial={{ opacity: 0, color: '#3f22ff' }}
         animate={{ opacity: 1, color: '#9a83b0' }}
-        transition={{ duration: 0.7 }}
+        transition={{ delay: 1.5, duration: 0.7 }}
       >
         Explore the Futuristic World of Productivity in true cyberpunk style.
         Immerse yourself in a digital realm where productivity meets the future.
@@ -36,7 +36,7 @@ const Home = () => {
           <FeatureDescription
             initial={{ opacity: 0, color: '#3f22ff' }}
             animate={{ opacity: 1, color: '#9a83b0' }}
-            transition={{ duration: 0.7 }}
+            transition={{ delay: 1.5, duration: 0.7 }}
           >
             Unleash the power of our advanced task manager, seamlessly blending
             cyberpunk aesthetics with efficient organization. Manage tasks
@@ -59,7 +59,7 @@ const Home = () => {
           <FeatureDescription
             initial={{ opacity: 0, color: '#3f22ff' }}
             animate={{ opacity: 1, color: '#9a83b0' }}
-            transition={{ duration: 0.7 }}
+            transition={{ delay: 1.5, duration: 0.7 }}
           >
             Connect with your contacts in style! Our Neon Phonebook lets you
             store and manage your cyber-contacts with flair. Neon-lit profiles
@@ -79,7 +79,7 @@ const Home = () => {
         <GetStartedDescription
           initial={{ opacity: 0, color: '#3f22ff' }}
           animate={{ opacity: 1, color: '#9a83b0' }}
-          transition={{ duration: 0.7 }}
+          transition={{ delay: 1.5, duration: 0.7 }}
         >
           Create your CyberTask Hub account now to embark on a journey of
           unparalleled productivity and style. Whether you're a cyberpunk
