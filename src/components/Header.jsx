@@ -20,7 +20,7 @@ const Header = () => {
             to="/"
             initial={{ y: -250, color: '#3f22ff' }}
             animate={{ y: 0, color: '#9422ff' }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, type: 'spring', stiffness: 320 }}
           >
             <GiCyberEye size={20} />
             CTHub
@@ -50,7 +50,7 @@ const Header = () => {
             <LinkContainer
               initial={{ x: '-100vw', color: '#3f22ff' }}
               animate={{ x: 0, color: '#9422ff' }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.7, type: 'spring', stiffness: 320 }}
             >
               <SpanStyled>
                 {image ? (

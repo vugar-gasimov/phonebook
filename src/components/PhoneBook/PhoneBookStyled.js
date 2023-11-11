@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
 
 const rotateHue = keyframes`
@@ -54,7 +55,7 @@ export const PhoneBookMainContainer = styled.div`
   }
 `;
 
-export const PhoneBookContainer = styled.div`
+export const PhoneBookContainer = styled(motion.div)`
   font-family: Arial, sans-serif;
   max-width: 400px;
   margin: 0 auto;
@@ -72,7 +73,7 @@ export const PhoneBookContainer = styled.div`
   );
 `;
 
-export const PhoneBookContactsContainer = styled.div`
+export const PhoneBookContactsContainer = styled(motion.div)`
   font-family: Arial, sans-serif;
   min-width: 300px;
   max-width: 500px;
@@ -91,7 +92,7 @@ export const PhoneBookContactsContainer = styled.div`
   );
 `;
 
-export const PhoneBookInputContainer = styled.div`
+export const PhoneBookInputContainer = styled(motion.div)`
   display: flex;
   margin-top: 10px;
   flex-direction: column;
@@ -173,7 +174,7 @@ export const ModalInput = styled.input`
   z-index: 103;
 `;
 
-export const PhoneBookContactList = styled.ul`
+export const PhoneBookContactList = styled(motion.ul)`
   list-style: none;
   padding: 0;
   max-height: 400px;

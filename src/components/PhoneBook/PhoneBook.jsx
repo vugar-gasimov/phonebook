@@ -47,7 +47,12 @@ const PhoneBook = () => {
   }, [lampActive]);
   return (
     <PhoneBookMainContainer>
-      <PhoneBookContainer>
+      <PhoneBookContainer
+        initial={{ opacity: 0, y: +200, x: '-100vw' }}
+        animate={{ opacity: 1, y: 0, x: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.7, type: 'spring', stiffness: 220 }}
+      >
         <PhoneBookTitle $active={lampActive}>
           PhoneBook <Phone strokeWidth={1.5} />
         </PhoneBookTitle>
@@ -57,7 +62,12 @@ const PhoneBook = () => {
         />
       </PhoneBookContainer>
 
-      <PhoneBookContactsContainer>
+      <PhoneBookContactsContainer
+        initial={{ opacity: 0, y: -200, x: '+100vw' }}
+        animate={{ opacity: 1, y: 0, x: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.7, type: 'spring', stiffness: 220 }}
+      >
         <PhoneBookContactTitle>
           Contacts <BookUser strokeWidth={1.5} />
         </PhoneBookContactTitle>

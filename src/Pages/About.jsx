@@ -1,11 +1,22 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
 const About = () => {
   return (
     <AboutUsContainer>
-      <AboutUsTitle>About Us</AboutUsTitle>
-      <AboutUsContent>
+      <AboutUsTitle
+        initial={{ opacity: 0, x: '-100vw' }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.7 }}
+      >
+        About Us
+      </AboutUsTitle>
+      <AboutUsContent
+        initial={{ opacity: 0, color: '#3f22ff' }}
+        animate={{ opacity: 1, color: '#9a83b0' }}
+        transition={{ delay: 1, duration: 0.5 }}
+      >
         <p>
           Welcome to CyberTask Hub, the futuristic productivity platform where
           technology meets organization. At CyberTask Hub, we believe in
@@ -50,13 +61,13 @@ const AboutUsContainer = styled.div`
   border-radius: 30px;
 `;
 
-const AboutUsTitle = styled.h2`
+const AboutUsTitle = styled(motion.h2)`
   color: #c8b6ff;
   font-size: 36px;
   margin-bottom: 20px;
 `;
 
-const AboutUsContent = styled.div`
+const AboutUsContent = styled(motion.div)`
   line-height: 1.6;
   font-size: 20px;
   font-weight: 500;
