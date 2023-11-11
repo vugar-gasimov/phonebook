@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { CgProfile } from 'react-icons/cg';
 import { GiCyberEye } from 'react-icons/gi';
+import { motion } from 'framer-motion';
 const Header = () => {
   const { name } = useSelector(selectUser);
   const { image } = useSelector(selectUser);
@@ -15,25 +16,42 @@ const Header = () => {
     <HeaderContainer>
       <NavContainer>
         <LinkContainer>
-          <StyledNavLink to="/">
+          <StyledNavLink
+            to="/"
+            initial={{ y: -250, color: '#3f22ff' }}
+            animate={{ y: 0, color: '#9422ff' }}
+            transition={{ duration: 0.7 }}
+          >
             <GiCyberEye size={20} />
             CTHub
           </StyledNavLink>
         </LinkContainer>
         <LinkContainer></LinkContainer>
-        <NavLinkContainer>
+        <NavLinkContainer
+          initial={{ y: -250, color: '#3f22ff' }}
+          animate={{ y: 0, color: '#9422ff' }}
+          transition={{ duration: 0.7 }}
+        >
           <StyledNavLink to="/">Home</StyledNavLink>
           <StyledNavLink to="/contacts">Phone book</StyledNavLink>
           <StyledNavLink to="/about">About us</StyledNavLink>
           {!isLoggedIn ? (
-            <LinkContainer>
+            <LinkContainer
+              initial={{ x: '-100vw', color: '#3f22ff' }}
+              animate={{ x: 0, color: '#9422ff' }}
+              transition={{ duration: 0.7 }}
+            >
               <StyledNavLinkProfile to="/register">
                 Sign up
               </StyledNavLinkProfile>
               <StyledNavLinkProfile to="/login">Login</StyledNavLinkProfile>
             </LinkContainer>
           ) : (
-            <LinkContainer>
+            <LinkContainer
+              initial={{ x: '-100vw', color: '#3f22ff' }}
+              animate={{ x: 0, color: '#9422ff' }}
+              transition={{ duration: 0.7 }}
+            >
               <SpanStyled>
                 {image ? (
                   <img src={image} alt={name} width={32} />
@@ -67,7 +85,7 @@ const HeaderContainer = styled.div`
   width: -webkit-fill-available;
 `;
 
-const LinkContainer = styled.div`
+const LinkContainer = styled(motion.div)`
   display: flex;
   gap: 15px;
 `;
@@ -78,7 +96,7 @@ const NavContainer = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
 `;
-const NavLinkContainer = styled.div`
+const NavLinkContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,7 +109,7 @@ const NavLinkContainer = styled.div`
     flex-direction: row;
   }
 `;
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled(motion.NavLink)`
   text-decoration: none;
   color: #8338ec;
   font-size: 30px;

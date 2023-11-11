@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -5,18 +6,50 @@ import styled from 'styled-components';
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterLinks>
+      <FooterLinks
+        initial={{ y: '+100vh', color: '#3f22ff' }}
+        animate={{ y: 0, color: '#9422ff' }}
+        transition={{ duration: 0.3 }}
+      >
         <li>
-          <StyledNavLink href="#">Home</StyledNavLink>
+          <StyledNavLink
+            initial={{ x: '-100vw', color: '#3f22ff' }}
+            animate={{ x: 0, color: '#9422ff' }}
+            transition={{ duration: 0.7 }}
+            href="#"
+          >
+            Home
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink href="#">About Us</StyledNavLink>
+          <StyledNavLink
+            initial={{ x: '-100vw', color: '#3f22ff' }}
+            animate={{ x: 0, color: '#9422ff' }}
+            transition={{ duration: 0.7 }}
+            href="#"
+          >
+            About Us
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink href="#">Services</StyledNavLink>
+          <StyledNavLink
+            initial={{ x: '+100vw', color: '#3f22ff' }}
+            animate={{ x: 0, color: '#9422ff' }}
+            transition={{ duration: 0.7 }}
+            href="#"
+          >
+            Services
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink href="#">Contacts</StyledNavLink>
+          <StyledNavLink
+            initial={{ x: '+100vw', color: '#3f22ff' }}
+            animate={{ x: 0, color: '#9422ff' }}
+            transition={{ duration: 0.7 }}
+            href="#"
+          >
+            Contacts
+          </StyledNavLink>
         </li>
       </FooterLinks>
 
@@ -69,7 +102,7 @@ const FooterContent = styled.div`
 const FooterContentWrapper = styled.div`
   text-align: center;
 `;
-const FooterLinks = styled.ul`
+const FooterLinks = styled(motion.ul)`
   list-style: none;
   text-decoration: none;
   list-style: none;
@@ -84,7 +117,7 @@ const FooterLinks = styled.ul`
   }
 `;
 
-const StyledNavLink = styled(Link)`
+const StyledNavLink = styled(motion(Link))`
   text-decoration: none;
   color: #8853d3;
   font-weight: 700;

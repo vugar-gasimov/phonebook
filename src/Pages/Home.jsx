@@ -1,37 +1,86 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { motion } from 'framer-motion';
 const Home = () => {
   return (
     <HomeContainer>
-      <Title>Welcome to CyberTask Hub! 🚀</Title>
-      <Subtitle>
+      <Title
+        initial={{ opacity: 0, color: '#3f22ff' }}
+        animate={{ opacity: 1, color: '#9422ff' }}
+        transition={{ duration: 0.7 }}
+      >
+        Welcome to CyberTask Hub! 🚀
+      </Title>
+      <Subtitle
+        initial={{ opacity: 0, color: '#3f22ff' }}
+        animate={{ opacity: 1, color: '#9a83b0' }}
+        transition={{ duration: 0.7 }}
+      >
         Explore the Futuristic World of Productivity in true cyberpunk style.
         Immerse yourself in a digital realm where productivity meets the future.
       </Subtitle>
       <Features>
-        <Feature>
-          <FeatureTitle>CyberTask Manager</FeatureTitle>
-          <FeatureDescription>
+        <Feature
+          initial={{ opacity: 0, y: +200, x: '+100vw' }}
+          animate={{ opacity: 1, y: 0, x: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.7 }}
+        >
+          <FeatureTitle
+            initial={{ opacity: 0, color: '#3f22ff' }}
+            animate={{ opacity: 1, color: '#9758d3' }}
+            transition={{ duration: 0.7 }}
+          >
+            CyberTask Manager
+          </FeatureTitle>
+          <FeatureDescription
+            initial={{ opacity: 0, color: '#3f22ff' }}
+            animate={{ opacity: 1, color: '#9a83b0' }}
+            transition={{ duration: 0.7 }}
+          >
             Unleash the power of our advanced task manager, seamlessly blending
             cyberpunk aesthetics with efficient organization. Manage tasks
             effortlessly, from daily to-do lists to long-term projects.
           </FeatureDescription>
         </Feature>
-        <Feature>
-          <FeatureTitle>Neon Phonebook</FeatureTitle>
-          <FeatureDescription>
+        <Feature
+          initial={{ opacity: 0, y: -200, x: '-100vw' }}
+          animate={{ opacity: 1, y: 0, x: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.7 }}
+        >
+          <FeatureTitle
+            initial={{ opacity: 0, color: '#3f22ff' }}
+            animate={{ opacity: 1, color: '#9758d3' }}
+            transition={{ duration: 0.7 }}
+          >
+            Neon Phonebook
+          </FeatureTitle>
+          <FeatureDescription
+            initial={{ opacity: 0, color: '#3f22ff' }}
+            animate={{ opacity: 1, color: '#9a83b0' }}
+            transition={{ duration: 0.7 }}
+          >
             Connect with your contacts in style! Our Neon Phonebook lets you
             store and manage your cyber-contacts with flair. Neon-lit profiles
             and a streamlined interface make staying in touch a futuristic
             experience.
           </FeatureDescription>
         </Feature>
-        {/* Add more features as needed */}
       </Features>
       <GetStarted>
-        <GetStartedTitle>Get Started</GetStartedTitle>
-        <GetStartedDescription>
+        <GetStartedTitle
+          initial={{ opacity: 0, color: '#3f22ff' }}
+          animate={{ opacity: 1, color: '#9758d3' }}
+          transition={{ duration: 0.7 }}
+        >
+          Get Started
+        </GetStartedTitle>
+        <GetStartedDescription
+          initial={{ opacity: 0, color: '#3f22ff' }}
+          animate={{ opacity: 1, color: '#9a83b0' }}
+          transition={{ duration: 0.7 }}
+        >
           Create your CyberTask Hub account now to embark on a journey of
           unparalleled productivity and style. Whether you're a cyberpunk
           enthusiast or just someone looking for a new, visually appealing way
@@ -40,7 +89,21 @@ const Home = () => {
         </GetStartedDescription>
       </GetStarted>
       <Footer>
-        <ConnectivityInfo>
+        <ConnectivityInfo
+          initial={{
+            opacity: 0,
+
+            fontWeight: 300,
+            color: '#3f22ff',
+          }}
+          animate={{
+            opacity: 1,
+            fontSize: 20,
+            fontWeight: 700,
+            color: '#9a83b0',
+          }}
+          transition={{ duration: 0.7 }}
+        >
           🌐 Stay Connected, Stay Productive – Welcome to CyberTask Hub!
         </ConnectivityInfo>
       </Footer>
@@ -62,12 +125,11 @@ const HomeContainer = styled.div`
   );
 `;
 
-const Title = styled.h1`
-  font-size: 2.5em;
+const Title = styled(motion.h1)`
   margin-bottom: 20px;
 `;
 
-const Subtitle = styled.p`
+const Subtitle = styled(motion.p)`
   font-size: 20px;
   margin-bottom: 30px;
 `;
@@ -78,19 +140,19 @@ const Features = styled.div`
   gap: 20px;
 `;
 
-const Feature = styled.div`
+const Feature = styled(motion.div)`
   flex: 1 1 300px;
   background-color: rgba(51, 51, 51, 0.6);
   padding: 20px;
   border-radius: 8px;
 `;
 
-const FeatureTitle = styled.h2`
+const FeatureTitle = styled(motion.h2)`
   font-size: 1.5em;
   margin-bottom: 10px;
 `;
 
-const FeatureDescription = styled.p`
+const FeatureDescription = styled(motion.p)`
   font-size: 20px;
 `;
 
@@ -98,12 +160,12 @@ const GetStarted = styled.div`
   margin-top: 40px;
 `;
 
-const GetStartedTitle = styled.h2`
+const GetStartedTitle = styled(motion.h2)`
   font-size: 1.5em;
   margin-bottom: 10px;
 `;
 
-const GetStartedDescription = styled.p`
+const GetStartedDescription = styled(motion.p)`
   font-size: 20px;
 `;
 
@@ -111,7 +173,7 @@ const Footer = styled.footer`
   margin-top: 40px;
 `;
 
-const ConnectivityInfo = styled.p`
+const ConnectivityInfo = styled(motion.p)`
   font-size: 1.2em;
 `;
 
