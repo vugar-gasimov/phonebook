@@ -13,8 +13,8 @@ const About = () => {
         About Us
       </AboutUsTitle>
       <AboutUsContent
-        initial={{ opacity: 0, color: '#3f22ff' }}
-        animate={{ opacity: 1, color: '#9a83b0' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
         <p>

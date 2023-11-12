@@ -9,7 +9,7 @@ import {
   BtnContainerTwo,
   Span,
   LinkStyled,
-} from './RegisterStyled';
+} from './SignUpStyled';
 import { useForm } from 'react-hook-form';
 
 import { Navigate, useNavigate } from 'react-router-dom';
@@ -62,8 +62,9 @@ const Register = () => {
         </StyledLabel>
         <br />
         <BtnContainerTwo>
-          {' '}
-          <ButtonsStyled type="submit">Sign up</ButtonsStyled>
+          <ButtonsStyled to="/" type="submit">
+            Sign up
+          </ButtonsStyled>
           <ButtonsStyled onClick={() => reset()} type="button">
             Clean
           </ButtonsStyled>

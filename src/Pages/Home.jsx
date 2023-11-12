@@ -5,15 +5,15 @@ const Home = () => {
   return (
     <HomeContainer>
       <Title
-        initial={{ opacity: 0, color: '#3f22ff' }}
-        animate={{ opacity: 1, color: '#9422ff' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
       >
         Welcome to CyberTask Hub! 🚀
       </Title>
       <Subtitle
-        initial={{ opacity: 0, color: '#3f22ff' }}
-        animate={{ opacity: 1, color: '#9a83b0' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.7 }}
       >
         Explore the Futuristic World of Productivity in true cyberpunk style.
@@ -27,15 +27,15 @@ const Home = () => {
           transition={{ duration: 0.7 }}
         >
           <FeatureTitle
-            initial={{ opacity: 0, color: '#3f22ff' }}
-            animate={{ opacity: 1, color: '#9758d3' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
           >
             CyberTask Manager
           </FeatureTitle>
           <FeatureDescription
-            initial={{ opacity: 0, color: '#3f22ff' }}
-            animate={{ opacity: 1, color: '#9a83b0' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.7 }}
           >
             Unleash the power of our advanced task manager, seamlessly blending
@@ -50,15 +50,15 @@ const Home = () => {
           transition={{ duration: 0.7 }}
         >
           <FeatureTitle
-            initial={{ opacity: 0, color: '#3f22ff' }}
-            animate={{ opacity: 1, color: '#9758d3' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
           >
             Neon Phonebook
           </FeatureTitle>
           <FeatureDescription
-            initial={{ opacity: 0, color: '#3f22ff' }}
-            animate={{ opacity: 1, color: '#9a83b0' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.7 }}
           >
             Connect with your contacts in style! Our Neon Phonebook lets you
@@ -70,15 +70,15 @@ const Home = () => {
       </Features>
       <GetStarted>
         <GetStartedTitle
-          initial={{ opacity: 0, color: '#3f22ff' }}
-          animate={{ opacity: 1, color: '#9758d3' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
         >
           Get Started
         </GetStartedTitle>
         <GetStartedDescription
-          initial={{ opacity: 0, color: '#3f22ff' }}
-          animate={{ opacity: 1, color: '#9a83b0' }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.7 }}
         >
           Create your CyberTask Hub account now to embark on a journey of
@@ -94,13 +94,11 @@ const Home = () => {
             opacity: 0,
 
             fontWeight: 300,
-            color: '#3f22ff',
           }}
           animate={{
             opacity: 1,
             fontSize: 20,
             fontWeight: 700,
-            color: '#9a83b0',
           }}
           transition={{ duration: 0.7 }}
         >

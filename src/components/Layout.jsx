@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
-import { LoadingWrapper } from './PhoneBook/PhoneBookStyled';
+
+import Loading from 'Loading/Loading';
 
 const Layout = () => {
   return (
     <div>
       <Header />
       <WrapperOutlet>
-        <Suspense fallback={<LoadingWrapper />}>
+        <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>
       </WrapperOutlet>

@@ -2,11 +2,20 @@ import { logoutThunk } from 'Redux/Auth/operations';
 import { selectIsLoggedIn, selectUser } from 'Redux/Auth/selectors';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+
 import { CgProfile } from 'react-icons/cg';
 import { GiCyberEye } from 'react-icons/gi';
-import { motion } from 'framer-motion';
+
+import {
+  HeaderContainer,
+  LinkContainer,
+  NavContainer,
+  NavLinkContainer,
+  SignUpBtn,
+  SpanStyled,
+  StyledNavLink,
+  StyledNavLinkProfile,
+} from './HeaderStyled';
 const Header = () => {
   const { name } = useSelector(selectUser);
   const { image } = useSelector(selectUser);
@@ -18,8 +27,8 @@ const Header = () => {
         <LinkContainer>
           <StyledNavLink
             to="/"
-            initial={{ y: -250, color: '#3f22ff' }}
-            animate={{ y: 0, color: '#9422ff' }}
+            initial={{ y: -250 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.7, type: 'spring', stiffness: 320 }}
           >
             <GiCyberEye size={20} />
@@ -28,8 +37,8 @@ const Header = () => {
         </LinkContainer>
         <LinkContainer></LinkContainer>
         <NavLinkContainer
-          initial={{ y: -250, color: '#3f22ff' }}
-          animate={{ y: 0, color: '#9422ff' }}
+          initial={{ y: -250 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.7 }}
         >
           <StyledNavLink to="/">Home</StyledNavLink>
@@ -37,19 +46,17 @@ const Header = () => {
           <StyledNavLink to="/about">About us</StyledNavLink>
           {!isLoggedIn ? (
             <LinkContainer
-              initial={{ x: '-100vw', color: '#3f22ff' }}
-              animate={{ x: 0, color: '#9422ff' }}
+              initial={{ x: '-100vw' }}
+              animate={{ x: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <StyledNavLinkProfile to="/register">
-                Sign up
-              </StyledNavLinkProfile>
+              <StyledNavLinkProfile to="/signUp">Sign up</StyledNavLinkProfile>
               <StyledNavLinkProfile to="/login">Login</StyledNavLinkProfile>
             </LinkContainer>
           ) : (
             <LinkContainer
-              initial={{ x: '-100vw', color: '#3f22ff' }}
-              animate={{ x: 0, color: '#9422ff' }}
+              initial={{ x: '-100vw' }}
+              animate={{ x: 0 }}
               transition={{ duration: 0.7, type: 'spring', stiffness: 320 }}
             >
               <SpanStyled>
@@ -72,99 +79,3 @@ const Header = () => {
 };
 
 export default Header;
-
-const HeaderContainer = styled.div`
-  padding: 20px 20px;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0,
-    rgba(26, 188, 156, 0.8) 100%
-  );
-  text-decoration: none;
-
-  width: -webkit-fill-available;
-`;
-
-const LinkContainer = styled(motion.div)`
-  display: flex;
-  gap: 15px;
-`;
-
-const NavContainer = styled(motion.nav)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
-const NavLinkContainer = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 30px;
-  @media screen and (max-width: 768px) {
-    gap: 10px;
-  }
-  @media screen and (min-width: 425px) {
-    flex-direction: row;
-  }
-`;
-const StyledNavLink = styled(motion(NavLink))`
-  text-decoration: none;
-  color: #8338ec;
-  font-size: 30px;
-  margin: 0;
-  padding: 0;
-  height: auto;
-  cursor: pointer;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
-`;
-
-const StyledNavLinkProfile = styled(NavLink)`
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border: 2px solid #8338ec;
-  color: #905cd7;
-  font-size: 30px;
-  padding: 8px 16px;
-  border-radius: 30px;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
-`;
-
-const SpanStyled = styled.span`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border: 3px solid #8338ec;
-  color: #8f60d1;
-  font-size: 24px;
-  font-weight: 700;
-  padding: 8px 16px;
-  border-radius: 30px;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
-`;
-
-const SignUpBtn = styled.button`
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 700;
-  border: 2px solid #8338ec;
-  color: #9568d5;
-  font-size: 24px;
-  padding: 8px 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
-`;

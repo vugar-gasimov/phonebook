@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import Layout from './Layout';
 import Login from '../Pages/LoginForm/Login';
-import Register from '../Pages/RegisterForm/Register';
+import SignUp from '../Pages/SignUpForm/SignUp';
 import { LoadingWrapper } from './PhoneBook/PhoneBookStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import Home from 'Pages/Home';
@@ -50,7 +50,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
         </Route>
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/signUp" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Wrapper>

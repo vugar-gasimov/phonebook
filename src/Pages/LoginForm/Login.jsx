@@ -62,8 +62,9 @@ const Login = () => {
         </StyledLabel>
         <br />
         <BtnContainerTwo>
-          {' '}
-          <ButtonsStyled type="submit">Login</ButtonsStyled>
+          <ButtonsStyled to="/" type="submit">
+            Login
+          </ButtonsStyled>
           <ButtonsStyled onClick={() => reset()} type="button">
             Clean
           </ButtonsStyled>
@@ -73,7 +74,7 @@ const Login = () => {
         <Span>
           If you don't have an account
           <span>
-            <LinkStyled to="/register">Sign up</LinkStyled>
+            <LinkStyled to="/signUp">Sign Up</LinkStyled>
           </span>
         </Span>
       </StyledLoginForm>
