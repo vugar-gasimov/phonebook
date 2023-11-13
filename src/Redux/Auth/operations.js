@@ -41,7 +41,7 @@ export const loginThunk = createAsyncThunk(
 
 export const logoutThunk = createAsyncThunk('logout', async (_, thunkApi) => {
   try {
-    phoneBookApi.post('users/logout');
+    await phoneBookApi.post('users/logout');
     clearToken();
   } catch (e) {
     return thunkApi.rejectWithValue(e.message);

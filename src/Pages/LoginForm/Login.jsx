@@ -12,20 +12,29 @@ import {
 } from './LoginStyled';
 import { useForm } from 'react-hook-form';
 
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn } from 'Redux/Auth/selectors';
+import {
+  selectError,
+  selectIsLoggedIn,
+  selectUser,
+} from 'Redux/Auth/selectors';
 import { loginThunk } from 'Redux/Auth/operations';
+import { useEffect, useRef } from 'react';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
+  const { name } = useSelector(selectUser);
+  const goBackRef = useRef(location.state?.from || '/');
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
+  const error = useSelector(selectError);
   const { register, reset, handleSubmit } = useForm();
 
-  const submit = data => {
-    dispatch(loginThunk(data));
+  const submit = async data => {
+    await dispatch(loginThunk(data));
     reset();
   };
 
@@ -33,7 +42,14 @@ const Login = () => {
     navigate('/');
   };
 
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
+
   if (isLoggedIn) {
+    toast.success(`Welcome${name}`);
     return <Navigate to="/" />;
   }
   return (
@@ -62,7 +78,7 @@ const Login = () => {
         </StyledLabel>
         <br />
         <BtnContainerTwo>
-          <ButtonsStyled to="/" type="submit">
+          <ButtonsStyled to={goBackRef.current} type="submit">
             Login
           </ButtonsStyled>
           <ButtonsStyled onClick={() => reset()} type="button">

@@ -1,6 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import {
+  ConnectivityInfo,
+  Feature,
+  FeatureDescription,
+  FeatureTitle,
+  Features,
+  Footer,
+  GetStarted,
+  GetStartedDescription,
+  GetStartedTitle,
+  HomeContainer,
+  Subtitle,
+  Title,
+} from './HomeStyled';
+
 const Home = () => {
   return (
     <HomeContainer>
@@ -108,71 +121,5 @@ const Home = () => {
     </HomeContainer>
   );
 };
-
-const HomeContainer = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Roboto', sans-serif;
-  color: #c8b6ff;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0,
-    rgba(26, 188, 156, 0.8) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-`;
-
-const Title = styled(motion.h1)`
-  margin-bottom: 20px;
-`;
-
-const Subtitle = styled(motion.p)`
-  font-size: 20px;
-  margin-bottom: 30px;
-`;
-
-const Features = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-`;
-
-const Feature = styled(motion.div)`
-  flex: 1 1 300px;
-  background-color: rgba(51, 51, 51, 0.6);
-  padding: 20px;
-  border-radius: 8px;
-`;
-
-const FeatureTitle = styled(motion.h2)`
-  font-size: 1.5em;
-  margin-bottom: 10px;
-`;
-
-const FeatureDescription = styled(motion.p)`
-  font-size: 20px;
-`;
-
-const GetStarted = styled.div`
-  margin-top: 40px;
-`;
-
-const GetStartedTitle = styled(motion.h2)`
-  font-size: 1.5em;
-  margin-bottom: 10px;
-`;
-
-const GetStartedDescription = styled(motion.p)`
-  font-size: 20px;
-`;
-
-const Footer = styled.footer`
-  margin-top: 40px;
-`;
-
-const ConnectivityInfo = styled(motion.p)`
-  font-size: 1.2em;
-`;
 
 export default Home;

@@ -19,7 +19,7 @@ export const FooterContainer = styled(motion.div)`
 `;
 
 export const FooterContent = styled(motion.div)`
-  color: #a581d7;
+  color: #480ca8;
   padding: 10px;
   text-align: center;
   display: flex;
@@ -54,7 +54,7 @@ export const FooterLinks = styled(motion.ul)`
 
 export const StyledNavLink = styled(motion(Link))`
   text-decoration: none;
-  color: #8853d3;
+  color: #4cc9f0;
   font-weight: 700;
   font-size: 24px;
   margin: 0;

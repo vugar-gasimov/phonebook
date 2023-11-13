@@ -16,11 +16,13 @@ import {
   StyledNavLink,
   StyledNavLinkProfile,
 } from './HeaderStyled';
+import { useLocation } from 'react-router-dom';
 const Header = () => {
   const { name } = useSelector(selectUser);
   const { image } = useSelector(selectUser);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
+  const location = useLocation();
   return (
     <HeaderContainer>
       <NavContainer transition={{ delay: 0.7 }}>
@@ -50,8 +52,12 @@ const Header = () => {
               animate={{ x: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <StyledNavLinkProfile to="/signUp">Sign up</StyledNavLinkProfile>
-              <StyledNavLinkProfile to="/login">Login</StyledNavLinkProfile>
+              <StyledNavLinkProfile state={{ from: location }} to="/signUp">
+                Sign up
+              </StyledNavLinkProfile>
+              <StyledNavLinkProfile state={{ from: location }} to="/login">
+                Login
+              </StyledNavLinkProfile>
             </LinkContainer>
           ) : (
             <LinkContainer

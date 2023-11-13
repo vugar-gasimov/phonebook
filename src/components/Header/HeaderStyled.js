@@ -40,7 +40,7 @@ export const NavLinkContainer = styled(motion.div)`
 `;
 export const StyledNavLink = styled(motion(NavLink))`
   text-decoration: none;
-  color: #8338ec;
+  color: #b5179e;
   font-size: 30px;
   margin: 0;
   padding: 0;
@@ -70,8 +70,8 @@ export const SpanStyled = styled.span`
   display: flex;
   align-items: center;
   gap: 5px;
-  border: 3px solid #8338ec;
-  color: #8f60d1;
+  border: 3px solid #b5179e;
+  color: #b5179e;
   font-size: 24px;
   font-weight: 700;
   padding: 8px 16px;
@@ -82,13 +82,14 @@ export const SpanStyled = styled.span`
 `;
 
 export const SignUpBtn = styled.button`
+  color: #b5179e;
   background-color: transparent;
   display: flex;
   align-items: center;
   gap: 5px;
   font-weight: 700;
-  border: 2px solid #8338ec;
-  color: #9568d5;
+  border: 2px solid #b5179e;
+
   font-size: 24px;
   padding: 8px 16px;
   border-radius: 30px;
