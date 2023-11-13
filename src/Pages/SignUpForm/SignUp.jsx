@@ -55,7 +55,16 @@ const Register = () => {
     <Flex>
       <StyledLoginForm onSubmit={handleSubmit(submit)}>
         <BtnContainerOne>
-          <ButtonsStyled onClick={handleExit} type="button">
+          <ButtonsStyled
+            whileHover={{
+              scale: 1.1,
+              zIndex: 4,
+              textShadow: '0px 0px 8px rgba(255, 255, 255)',
+              boxShadow: '0px 0px 8px rgba(255, 255, 255)',
+            }}
+            onClick={handleExit}
+            type="button"
+          >
             Exit
           </ButtonsStyled>
         </BtnContainerOne>
@@ -72,10 +81,28 @@ const Register = () => {
         ))}
 
         <BtnContainerTwo>
-          <ButtonsStyled to={goBackRef.current} type="submit">
+          <ButtonsStyled
+            whileHover={{
+              scale: 1.1,
+              zIndex: 4,
+              textShadow: '0px 0px 8px rgba(255, 255, 255)',
+              boxShadow: '0px 0px 8px rgba(255, 255, 255)',
+            }}
+            to={goBackRef.current}
+            type="submit"
+          >
             Sign up
           </ButtonsStyled>
-          <ButtonsStyled onClick={() => reset()} type="button">
+          <ButtonsStyled
+            whileHover={{
+              scale: 1.1,
+              zIndex: 4,
+              textShadow: '0px 0px 8px rgba(255, 255, 255)',
+              boxShadow: '0px 0px 8px rgba(255, 255, 255)',
+            }}
+            onClick={() => reset()}
+            type="button"
+          >
             Clean
           </ButtonsStyled>
         </BtnContainerTwo>
@@ -84,7 +111,16 @@ const Register = () => {
         <Span>
           If you already have an account
           <span>
-            <LinkStyled to="/login">Login</LinkStyled>
+            <LinkStyled
+              whileHover={{
+                scale: 1.1,
+                zIndex: 4,
+                textShadow: '0px 0px 8px rgba(255, 255, 255)',
+              }}
+              to="/login"
+            >
+              Login
+            </LinkStyled>
           </span>
         </Span>
       </StyledLoginForm>

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 export const StyledTitle = styled.h1`
@@ -39,8 +40,14 @@ export const StyledInput = styled.input`
   outline: none;
   border-bottom: 3px solid #38ecc8;
   &:invalid {
-    background-color: red;
+    border: 2px solid red;
   }
+`;
+
+export const ErrorMessage = styled.div`
+  color: red;
+  font-size: 14px;
+  margin-bottom: 5px;
 `;
 export const Flex = styled.div`
   display: flex;
@@ -51,7 +58,7 @@ export const Flex = styled.div`
   justify-content: center;
 `;
 
-export const ButtonsStyled = styled.button`
+export const ButtonsStyled = styled(motion.button)`
   width: fit-content;
   text-decoration: none;
   margin-left: 20px;
@@ -90,7 +97,7 @@ export const Span = styled.span`
   font-size: 18px;
   color: #38ecc8;
 `;
-export const LinkStyled = styled(Link)`
+export const LinkStyled = styled(motion(Link))`
   margin-left: 5px;
   font-size: 30px;
   color: #6b38ec;

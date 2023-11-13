@@ -37,5 +37,5 @@ export const schemaRegister = yup.object().shape({
   confirmPassword: yup
     .string()
     .oneOf([yup.ref('password')], 'Passwords must match')
-    .required(),
+    .required('Confirm password is a required field'),
 });
