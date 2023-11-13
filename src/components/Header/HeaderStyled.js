@@ -51,7 +51,7 @@ export const StyledNavLink = styled(motion(NavLink))`
   }
 `;
 
-export const StyledNavLinkProfile = styled(NavLink)`
+export const StyledNavLinkProfile = styled(motion(NavLink))`
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@ export const SpanStyled = styled.span`
   }
 `;
 
-export const SignUpBtn = styled.button`
+export const SignUpBtn = styled(motion.button)`
   color: #b5179e;
   background-color: transparent;
   display: flex;

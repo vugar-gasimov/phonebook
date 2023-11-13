@@ -29,8 +29,8 @@ const Login = () => {
   const error = useSelector(selectError);
   const { register, reset, handleSubmit } = useForm();
 
-  const submit = async data => {
-    await dispatch(loginThunk(data));
+  const submit = data => {
+    dispatch(loginThunk(data));
     reset();
   };
 
@@ -58,6 +58,7 @@ const Login = () => {
         <StyledLabel>
           Email:
           <StyledInput
+            placeholder="Enter the email"
             {...register('email', { required: true, minLength: 5 })}
           />
         </StyledLabel>
@@ -65,6 +66,8 @@ const Login = () => {
         <StyledLabel>
           Password:
           <StyledInput
+            placeholder="Enter the password"
+            type="password"
             {...register('password', { required: true, minLength: 5 })}
           />
         </StyledLabel>

@@ -28,6 +28,10 @@ const Header = () => {
       <NavContainer transition={{ delay: 0.7 }}>
         <LinkContainer>
           <StyledNavLink
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
             to="/"
             initial={{ y: -250 }}
             animate={{ y: 0 }}
@@ -43,19 +47,57 @@ const Header = () => {
           animate={{ y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/contacts">Phone book</StyledNavLink>
-          <StyledNavLink to="/about">About us</StyledNavLink>
+          <StyledNavLink
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
+            to="/"
+          >
+            Home
+          </StyledNavLink>
+          <StyledNavLink
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
+            to="/contacts"
+          >
+            Phone book
+          </StyledNavLink>
+          <StyledNavLink
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
+            to="/about"
+          >
+            About us
+          </StyledNavLink>
           {!isLoggedIn ? (
             <LinkContainer
               initial={{ x: '-100vw' }}
               animate={{ x: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <StyledNavLinkProfile state={{ from: location }} to="/signUp">
+              <StyledNavLinkProfile
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                }}
+                state={{ from: location }}
+                to="/signUp"
+              >
                 Sign up
               </StyledNavLinkProfile>
-              <StyledNavLinkProfile state={{ from: location }} to="/login">
+              <StyledNavLinkProfile
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                }}
+                state={{ from: location }}
+                to="/login"
+              >
                 Login
               </StyledNavLinkProfile>
             </LinkContainer>
@@ -73,7 +115,14 @@ const Header = () => {
                 )}
                 {name}
               </SpanStyled>
-              <SignUpBtn onClick={() => dispatch(logoutThunk())}>
+              <SignUpBtn
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                  boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                }}
+                onClick={() => dispatch(logoutThunk())}
+              >
                 Logout
               </SignUpBtn>
             </LinkContainer>

@@ -18,40 +18,44 @@ const Footer = () => {
       >
         <li>
           <StyledNavLink
+            whileHover={{ scale: 1.1 }}
             initial={{ x: '-100vw' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.7 }}
-            href="#"
+            to="/home"
           >
             Home
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink
+            whileHover={{ scale: 1.1 }}
             initial={{ x: '-100vw' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.7 }}
-            href="#"
+            to="/about"
           >
             About Us
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink
+            whileHover={{ scale: 1.1 }}
             initial={{ x: '+100vw' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.7 }}
-            href="#"
+            to="/"
           >
             Services
           </StyledNavLink>
         </li>
         <li>
           <StyledNavLink
+            whileHover={{ scale: 1.1 }}
             initial={{ x: '+100vw' }}
             animate={{ x: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            href="#"
+            to="/"
           >
             Contacts
           </StyledNavLink>

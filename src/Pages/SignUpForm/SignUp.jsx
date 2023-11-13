@@ -1,6 +1,4 @@
 import {
-  StyledInput,
-  StyledLabel,
   StyledLoginForm,
   StyledTitle,
   Flex,
@@ -11,27 +9,34 @@ import {
   LinkStyled,
 } from './SignUpStyled';
 import { useForm } from 'react-hook-form';
-
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerThunk } from 'Redux/Auth/operations';
 import { selectError, selectIsLoggedIn } from 'Redux/Auth/selectors';
 import { useEffect, useRef } from 'react';
 import { toast } from 'react-toastify';
+import { inputData, schemaRegister } from 'Helpers/schemas';
+import CustomError from 'components/CustomError';
+import { Input } from 'components/Input';
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { register, reset, handleSubmit } = useForm();
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schemaRegister) });
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
   const goBackRef = useRef(location.state?.from || '/');
   const error = useSelector(selectError);
 
-  // const submit = async data => {
-  //   await dispatch(registerThunk(data));
-  //   reset();
-  // };
+  const submit = ({ confirmPassword, ...data }) => {
+    dispatch(registerThunk(data));
+  };
 
   const handleExit = () => {
     navigate('/');
@@ -55,23 +60,17 @@ const Register = () => {
           </ButtonsStyled>
         </BtnContainerOne>
         <StyledTitle>Sign up</StyledTitle>
+        {inputData.map(item => (
+          <div key={item.name}>
+            <Input
+              placeholder={item.placeholder}
+              name={item.name}
+              register={register}
+            />
+            <CustomError name={item.name} errors={errors} />
+          </div>
+        ))}
 
-        <br />
-        <StyledLabel>
-          Name:
-          <StyledInput {...register('name', { required: true })} />
-        </StyledLabel>
-        <br />
-        <StyledLabel>
-          Email:
-          <StyledInput {...register('email', { required: true })} />
-        </StyledLabel>
-        <br />
-        <StyledLabel>
-          Password:
-          <StyledInput {...register('password', { required: true })} />
-        </StyledLabel>
-        <br />
         <BtnContainerTwo>
           <ButtonsStyled to={goBackRef.current} type="submit">
             Sign up
