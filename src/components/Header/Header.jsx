@@ -17,6 +17,37 @@ import {
   StyledNavLinkProfile,
 } from './HeaderStyled';
 import { useLocation } from 'react-router-dom';
+
+const navContainerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      type: 'spring',
+      stiffness: 320,
+    },
+  },
+};
+
+const linkContainerVariants = {
+  hidden: {
+    x: '-100vw',
+  },
+  visible: {
+    x: 0,
+    transition: {
+      duration: 0.7,
+      type: 'spring',
+      stiffness: 320,
+    },
+  },
+};
+
 const Header = () => {
   const { name } = useSelector(selectUser);
   const { image } = useSelector(selectUser);
@@ -25,17 +56,19 @@ const Header = () => {
   const location = useLocation();
   return (
     <HeaderContainer>
-      <NavContainer transition={{ delay: 0.7 }}>
-        <LinkContainer>
+      <NavContainer
+        initial="hidden"
+        animate="visible"
+        variants={navContainerVariants}
+      >
+        <LinkContainer variants={linkContainerVariants}>
           <StyledNavLink
             whileHover={{
               scale: 1.1,
               textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
             }}
-            to="/"
-            initial={{ y: -250 }}
-            animate={{ y: 0 }}
             transition={{ duration: 0.7, type: 'spring', stiffness: 320 }}
+            to="/"
           >
             <GiCyberEye size={20} />
             CTHub
