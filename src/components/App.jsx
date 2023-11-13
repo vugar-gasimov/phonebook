@@ -16,8 +16,10 @@ import { refreshThunk } from 'Redux/Auth/operations';
 import { PrivateRoute } from 'Hoc/PrivateRoute';
 import { selectRefresh } from 'Redux/Auth/selectors';
 import Loading from 'Loading/Loading';
+import PublicRoute from 'Hoc/PublicRoute';
 
 const PhoneBook = lazy(() => import('./PhoneBook/PhoneBook'));
+
 const App = () => {
   const dispatch = useDispatch();
   const refresh = useSelector(selectRefresh);
@@ -25,6 +27,7 @@ const App = () => {
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
+
   return refresh ? (
     <Loading />
   ) : (
@@ -50,8 +53,22 @@ const App = () => {
           />
           <Route path="/about" element={<About />} />
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signUp" element={<SignUp />} />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/signUp"
+          element={
+            <PublicRoute>
+              <SignUp />
+            </PublicRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Wrapper>

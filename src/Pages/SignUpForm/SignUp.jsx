@@ -27,10 +27,11 @@ const Register = () => {
   const location = useLocation();
   const goBackRef = useRef(location.state?.from || '/');
   const error = useSelector(selectError);
-  const submit = async data => {
-    await dispatch(registerThunk(data));
-    reset();
-  };
+
+  // const submit = async data => {
+  //   await dispatch(registerThunk(data));
+  //   reset();
+  // };
 
   const handleExit = () => {
     navigate('/');
