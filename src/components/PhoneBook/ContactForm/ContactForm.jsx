@@ -107,6 +107,7 @@ const ContactForm = () => {
           textShadow: '0px 0px 8px rgba(255, 255, 255)',
           boxShadow: '0px 0px 8px rgba(255, 255, 255)',
         }}
+        transition={{ type: 'spring', stiffness: 300 }}
         onClick={handleNewContacts}
         disabled={!isNameValid || !isNumberValid}
       >

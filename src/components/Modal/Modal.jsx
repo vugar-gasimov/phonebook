@@ -52,6 +52,7 @@ const Modal = ({ children, close }) => {
             zIndex: 5,
             textShadow: '0px 0px 8px rgba(255, 255, 255)',
           }}
+          transition={{ type: 'spring', stiffness: 300 }}
           onClick={close}
         >
           ×

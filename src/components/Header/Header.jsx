@@ -52,6 +52,7 @@ const Header = () => {
               scale: 1.1,
               textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
             }}
+            transition={{ type: 'spring', stiffness: 300 }}
             to="/"
           >
             Home
@@ -61,6 +62,7 @@ const Header = () => {
               scale: 1.1,
               textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
             }}
+            transition={{ type: 'spring', stiffness: 300 }}
             to="/contacts"
           >
             Phone book
@@ -70,6 +72,7 @@ const Header = () => {
               scale: 1.1,
               textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
             }}
+            transition={{ type: 'spring', stiffness: 300 }}
             to="/about"
           >
             About us
@@ -86,6 +89,7 @@ const Header = () => {
                   textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                   boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                 }}
+                transition={{ type: 'spring', stiffness: 300 }}
                 state={{ from: location }}
                 to="/signUp"
               >
@@ -97,6 +101,7 @@ const Header = () => {
                   textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                   boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                 }}
+                transition={{ type: 'spring', stiffness: 300 }}
                 state={{ from: location }}
                 to="/login"
               >
@@ -123,6 +128,7 @@ const Header = () => {
                   textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                   boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                 }}
+                transition={{ type: 'spring', stiffness: 300 }}
                 onClick={() => dispatch(logoutThunk())}
               >
                 Logout

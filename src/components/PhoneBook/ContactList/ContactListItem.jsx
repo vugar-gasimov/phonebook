@@ -69,6 +69,7 @@ export function ContactListItem({ contact }) {
             textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
             boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
           }}
+          transition={{ type: 'spring', stiffness: 300 }}
           onClick={openModal}
         >
           Edit
@@ -102,6 +103,7 @@ export function ContactListItem({ contact }) {
                   textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                   boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                 }}
+                transition={{ type: 'spring', stiffness: 300 }}
                 type="submit"
               >
                 Submit
@@ -119,6 +121,7 @@ export function ContactListItem({ contact }) {
             textShadow: '0px 0px 8px rgba(255, 255, 255)',
             boxShadow: '0px 0px 8px rgba(255, 255, 255)',
           }}
+          transition={{ type: 'spring', stiffness: 300 }}
         >
           {loading && curId === contact.id ? 'Deleting...' : 'Delete'}
         </DeleteButton>

@@ -18,10 +18,13 @@ const Footer = () => {
       >
         <li>
           <StyledNavLink
-            whileHover={{ scale: 1.1 }}
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
             initial={{ x: '-100vw' }}
             animate={{ x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, type: 'spring', stiffness: 300 }}
             to="/home"
           >
             Home
@@ -29,10 +32,13 @@ const Footer = () => {
         </li>
         <li>
           <StyledNavLink
-            whileHover={{ scale: 1.1 }}
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
             initial={{ x: '-100vw' }}
             animate={{ x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, type: 'spring', stiffness: 300 }}
             to="/about"
           >
             About Us
@@ -40,10 +46,13 @@ const Footer = () => {
         </li>
         <li>
           <StyledNavLink
-            whileHover={{ scale: 1.1 }}
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
             initial={{ x: '+100vw' }}
             animate={{ x: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.7, type: 'spring', stiffness: 300 }}
             to="/"
           >
             Services
@@ -51,10 +60,13 @@ const Footer = () => {
         </li>
         <li>
           <StyledNavLink
-            whileHover={{ scale: 1.1 }}
+            whileHover={{
+              scale: 1.1,
+              textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            }}
             initial={{ x: '+100vw' }}
             animate={{ x: 0 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
+            transition={{ duration: 0.7, type: 'spring', stiffness: 300 }}
             to="/"
           >
             Contacts
