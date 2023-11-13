@@ -46,9 +46,6 @@ export const StyledNavLink = styled(motion(NavLink))`
   padding: 0;
   height: auto;
   cursor: pointer;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
 `;
 
 export const StyledNavLinkProfile = styled(motion(NavLink))`
@@ -61,9 +58,6 @@ export const StyledNavLinkProfile = styled(motion(NavLink))`
   font-size: 30px;
   padding: 8px 16px;
   border-radius: 30px;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
 `;
 
 export const SpanStyled = styled.span`
@@ -76,9 +70,6 @@ export const SpanStyled = styled.span`
   font-weight: 700;
   padding: 8px 16px;
   border-radius: 30px;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
 `;
 
 export const SignUpBtn = styled(motion.button)`
@@ -94,7 +85,4 @@ export const SignUpBtn = styled(motion.button)`
   padding: 8px 16px;
   border-radius: 30px;
   cursor: pointer;
-  &:hover {
-    text-shadow: 0 0 3px #8338ec;
-  }
 `;

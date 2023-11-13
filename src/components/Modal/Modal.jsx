@@ -46,7 +46,16 @@ const Modal = ({ children, close }) => {
         <>
           <ModalTitle>Contact</ModalTitle>
         </>
-        <CloseButton onClick={close}>×</CloseButton>
+        <CloseButton
+          whileHover={{
+            scale: 1.7,
+            zIndex: 5,
+            textShadow: '0px 0px 8px rgba(255, 255, 255)',
+          }}
+          onClick={close}
+        >
+          ×
+        </CloseButton>
         {children}
       </ModalContent>
     </ModalWrapper>,

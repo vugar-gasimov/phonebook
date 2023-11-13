@@ -187,7 +187,7 @@ export const PhoneBookContactItem = styled.li`
   margin: 8px 0;
 `;
 
-export const PhoneBookButton = styled.button`
+export const PhoneBookButton = styled(motion.button)`
   --border-radius: 4px;
   --border-width: 4px;
   appearance: none;
@@ -256,7 +256,7 @@ export const PhoneBookButton = styled.button`
   }
 `;
 
-export const DeleteButton = styled.button`
+export const DeleteButton = styled(motion.button)`
   --border-radius: 4px;
   --border-width: 4px;
   appearance: none;
@@ -330,7 +330,7 @@ export const DeleteButton = styled.button`
   }
 `;
 
-export const ModalSubmit = styled.button`
+export const ModalSubmit = styled(motion.button)`
   margin-top: 10px;
   --border-radius: 4px;
   --border-width: 4px;

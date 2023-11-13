@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 export const StyledTitle = styled.h1`
@@ -51,7 +52,7 @@ export const Flex = styled.div`
   justify-content: center;
 `;
 
-export const ButtonsStyled = styled.button`
+export const ButtonsStyled = styled(motion.button)`
   width: fit-content;
   text-decoration: none;
   margin-left: 20px;
@@ -90,7 +91,7 @@ export const Span = styled.span`
   font-size: 18px;
   color: #38ecc8;
 `;
-export const LinkStyled = styled(Link)`
+export const LinkStyled = styled(motion(Link))`
   margin-left: 5px;
   font-size: 30px;
   color: #6b38ec;

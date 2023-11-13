@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
 
 const rotateHue = keyframes`
@@ -79,7 +80,7 @@ export const ModalContent = styled.div`
   }
 `;
 
-export const CloseButton = styled.button`
+export const CloseButton = styled(motion.button)`
   position: absolute;
   z-index: 101;
   top: 5px;

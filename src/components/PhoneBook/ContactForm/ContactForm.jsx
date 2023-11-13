@@ -101,6 +101,12 @@ const ContactForm = () => {
         <PhoneBookHint>Please enter a valid phone number.</PhoneBookHint>
       )}
       <PhoneBookButton
+        whileHover={{
+          scale: 1.1,
+          zIndex: 4,
+          textShadow: '0px 0px 8px rgba(255, 255, 255)',
+          boxShadow: '0px 0px 8px rgba(255, 255, 255)',
+        }}
         onClick={handleNewContacts}
         disabled={!isNameValid || !isNumberValid}
       >

@@ -84,6 +84,7 @@ const Header = () => {
                 whileHover={{
                   scale: 1.1,
                   textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                  boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                 }}
                 state={{ from: location }}
                 to="/signUp"
@@ -94,6 +95,7 @@ const Header = () => {
                 whileHover={{
                   scale: 1.1,
                   textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                  boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
                 }}
                 state={{ from: location }}
                 to="/login"

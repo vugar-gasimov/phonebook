@@ -62,7 +62,17 @@ export function ContactListItem({ contact }) {
     <ListItemContainer>
       {contact.name}: {contact.number}
       <ButtonsContainer>
-        <DeleteButton onClick={openModal}>Edit</DeleteButton>
+        <DeleteButton
+          whileHover={{
+            scale: 1.1,
+            zIndex: 4,
+            textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+            boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+          }}
+          onClick={openModal}
+        >
+          Edit
+        </DeleteButton>
         {isOpen ? (
           <Modal close={closeModal}>
             <form onSubmit={handleChangeContact} onKeyPress={handleKeyPress}>
@@ -86,7 +96,16 @@ export function ContactListItem({ contact }) {
                 onChange={e => setUpdatedNumber(e.target.value)}
               />
               <br />
-              <ModalSubmit type="submit">Submit</ModalSubmit>
+              <ModalSubmit
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                  boxShadow: ' 0px 0px 8px rgba(255, 255, 255,)',
+                }}
+                type="submit"
+              >
+                Submit
+              </ModalSubmit>
             </form>
           </Modal>
         ) : null}
@@ -94,6 +113,12 @@ export function ContactListItem({ contact }) {
         <DeleteButton
           onClick={() => dispatch(deleteContactThunk(contact.id))}
           disabled={loading && curId === contact.id}
+          whileHover={{
+            scale: 1.1,
+            zIndex: 4,
+            textShadow: '0px 0px 8px rgba(255, 255, 255)',
+            boxShadow: '0px 0px 8px rgba(255, 255, 255)',
+          }}
         >
           {loading && curId === contact.id ? 'Deleting...' : 'Delete'}
         </DeleteButton>
