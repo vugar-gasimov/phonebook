@@ -1,4 +1,4 @@
-import { ErrorMessage } from 'Pages/SignUpForm/SignUpStyled';
+import { ErrorMessage } from 'Pages/signUpForm/SignUpStyled';
 import React from 'react';
 
 const CustomError = ({ errors, name, message }) => {

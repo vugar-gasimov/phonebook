@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { setCurrentId } from './phoneBookSlice';
-import { phoneBookApi } from 'Redux/Auth/operations';
+import { phoneBookApi } from 'Redux/auth/operations';
 
 export const fetchDataThunk = createAsyncThunk(
   'contacts/fetch',

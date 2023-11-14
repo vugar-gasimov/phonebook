@@ -4,20 +4,20 @@ import {
   selectFilteredData,
   selectFilter,
   selectContacts,
-} from 'Redux/PhoneBook/selectors';
+} from 'Redux/phoneBook/selectors';
 import { setFilter } from 'Redux/filterSlice';
-import { fetchDataThunk } from 'Redux/PhoneBook/operations';
+import { fetchDataThunk } from 'Redux/phoneBook/operations';
 import {
   PhoneBookContactTitle,
   PhoneBookContainer,
   PhoneBookTitle,
   PhoneBookContactsContainer,
   PhoneBookMainContainer,
-} from './PhoneBookStyled';
+} from './phoneBookStyled';
 import { BookUser, Phone } from 'lucide-react';
-import ContactForm from './ContactForm/ContactForm';
-import Filter from './Filter/Filter';
-import ContactList from './ContactList/ContactList';
+import ContactForm from './contactForm/ContactForm';
+import Filter from './filter/Filter';
+import ContactList from './contactList/ContactList';
 
 const PhoneBook = () => {
   const dispatch = useDispatch();

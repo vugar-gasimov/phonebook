@@ -8,18 +8,18 @@ import {
   ModalInput,
   ModalText,
   ModalSubmit,
-} from '../PhoneBookStyled';
+} from '../phoneBookStyled';
 import {
   deleteContactThunk,
   editContactThunk,
-} from 'Redux/PhoneBook/operations';
+} from 'Redux/phoneBook/operations';
 import {
   selectDeletedId,
   selectError,
   selectLoading,
-} from 'Redux/PhoneBook/selectors';
-import { useModal } from 'components/Hooks/useModal';
-import Modal from 'components/Modal/Modal';
+} from 'Redux/phoneBook/selectors';
+import { useModal } from 'components/hooks/useModal';
+import Modal from 'components/modal/Modal';
 
 export function ContactListItem({ contact }) {
   const [updatedName, setUpdatedName] = useState(contact.name);

@@ -4,8 +4,8 @@ import {
   PhoneBookInputContainer,
   PhoneBookInputLabel,
   PhoneBookInput,
-} from '../PhoneBookStyled';
-import { selectFilter } from 'Redux/PhoneBook/selectors';
+} from '../phoneBookStyled';
+import { selectFilter } from 'Redux/phoneBook/selectors';
 import { setFilter } from 'Redux/filterSlice';
 
 const Filter = () => {

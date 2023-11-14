@@ -14,8 +14,8 @@ import { useForm } from 'react-hook-form';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectError } from 'Redux/Auth/selectors';
-import { loginThunk } from 'Redux/Auth/operations';
+import { selectError } from 'Redux/auth/selectors';
+import { loginThunk } from 'Redux/auth/operations';
 import { useEffect, useRef } from 'react';
 import { toast } from 'react-toastify';
 

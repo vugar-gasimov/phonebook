@@ -1,22 +1,22 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
-import NotFound from 'Pages/NotFound/NotFound';
+import NotFound from 'Pages/notFound/NotFound';
 import BgImg from '../images/R.jpg';
 import styled from 'styled-components';
 
 import Layout from './Layout';
-import Login from '../Pages/LoginForm/Login';
-import SignUp from '../Pages/SignUpForm/SignUp';
+import Login from '../Pages/loginForm/Login';
+import SignUp from '../Pages/signUpForm/SignUp';
 
 import { useDispatch, useSelector } from 'react-redux';
-import Home from 'Pages/Home/Home';
+import Home from 'Pages/home/Home';
 import About from 'Pages/About';
-import { refreshThunk } from 'Redux/Auth/operations';
-import { PrivateRoute } from 'Hoc/PrivateRoute';
-import { selectRefresh } from 'Redux/Auth/selectors';
-import Loading from 'Loading/Loading';
-import PublicRoute from 'Hoc/PublicRoute';
+import { refreshThunk } from 'Redux/auth/operations';
+import { PrivateRoute } from 'routes/PrivateRoute';
+import { selectRefresh } from 'Redux/auth/selectors';
+import Loading from 'loading/Loading';
+import PublicRoute from 'routes/PublicRoute';
 
 const PhoneBook = lazy(() => import('./PhoneBook/PhoneBook'));
 

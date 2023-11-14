@@ -1,5 +1,5 @@
-import { logoutThunk } from 'Redux/Auth/operations';
-import { selectIsLoggedIn, selectUser } from 'Redux/Auth/selectors';
+import { logoutThunk } from 'Redux/auth/operations';
+import { selectIsLoggedIn, selectUser } from 'Redux/auth/selectors';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -15,7 +15,7 @@ import {
   SpanStyled,
   StyledNavLink,
   StyledNavLinkProfile,
-} from './HeaderStyled';
+} from './headerStyled';
 import { useLocation } from 'react-router-dom';
 
 const navContainerVariants = {

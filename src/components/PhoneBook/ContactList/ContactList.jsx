@@ -4,12 +4,12 @@ import {
   PhoneBookInputContainer,
   PhoneBookContactList,
   LoadingWrapper,
-} from '../PhoneBookStyled';
+} from '../phoneBookStyled';
 import {
   selectContacts,
   selectFilter,
   selectLoading,
-} from 'Redux/PhoneBook/selectors';
+} from 'Redux/phoneBook/selectors';
 import { ContactListItem } from './ContactListItem';
 
 const ContactList = () => {

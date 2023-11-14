@@ -31,7 +31,7 @@ const authSlice = createSlice({
       })
       .addCase(refreshThunk.pending, (state, { payload }) => {
         state.isRefreshing = true;
-        state.error = payload;
+        state.error = null;
       })
       .addCase(refreshThunk.rejected, (state, { payload }) => {
         state.isRefreshing = false;

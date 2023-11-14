@@ -12,11 +12,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { registerThunk } from 'Redux/Auth/operations';
-import { selectError, selectIsLoggedIn } from 'Redux/Auth/selectors';
+import { registerThunk } from 'Redux/auth/operations';
+import { selectError, selectIsLoggedIn } from 'Redux/auth/selectors';
 import { useEffect, useRef } from 'react';
 import { toast } from 'react-toastify';
-import { inputData, schemaRegister } from 'Helpers/schemas';
+import { inputData, schemaRegister } from 'helpers/schemas';
 import CustomError from 'components/CustomError';
 import { Input } from 'components/Input';
 

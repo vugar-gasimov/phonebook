@@ -1,4 +1,4 @@
-import { StyledInput, StyledLabel } from 'Pages/SignUpForm/SignUpStyled';
+import { StyledInput, StyledLabel } from 'Pages/signUpForm/SignUpStyled';
 
 export const Input = ({ register, type = 'text', placeholder, name }) => {
   const formattedLabel = name

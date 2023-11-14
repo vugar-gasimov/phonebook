@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import styled from 'styled-components';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
+import Header from './header/Header';
+import Footer from './footer/Footer';
 import { Outlet } from 'react-router-dom';
 
-import Loading from 'Loading/Loading';
+import Loading from 'loading/Loading';
 
 const Layout = () => {
   return (

@@ -6,7 +6,7 @@ import {
   FooterContentWrapper,
   FooterLinks,
   StyledNavLink,
-} from './FooterStyled';
+} from './footerStyled';
 
 const Footer = () => {
   return (

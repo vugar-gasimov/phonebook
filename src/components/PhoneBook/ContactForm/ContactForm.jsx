@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { selectContacts } from 'Redux/PhoneBook/selectors';
+import { selectContacts } from 'Redux/phoneBook/selectors';
 import { nanoid } from '@reduxjs/toolkit';
-import { addContactThunk } from 'Redux/PhoneBook/operations';
+import { addContactThunk } from 'Redux/phoneBook/operations';
 import {
   PhoneBookInputContainer,
   PhoneBookInputLabel,
   PhoneBookInput,
   PhoneBookButton,
   PhoneBookHint,
-} from '../PhoneBookStyled';
+} from '../phoneBookStyled';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
