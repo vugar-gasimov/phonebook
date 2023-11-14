@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import BgImg from '../../images/R.jpg';
+import { motion } from 'framer-motion';
 export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 export const Content = styled.div`
   text-align: center;
-  color: #8338ec;
+  color: #480ca8;
   background: rgba(26, 188, 156, 0.5);
   width: fit-content;
   border-radius: 10px;
@@ -23,28 +24,19 @@ export const LinkContainer = styled.div`
   align-items: center;
   font-size: 30px;
 `;
-export const LinkStyled = styled(Link)`
+export const LinkStyled = styled(motion(Link))`
   width: fit-content;
   text-decoration: none;
   margin-left: 20px;
-  border: 2px solid #8338ec;
+  border: 3px solid #480ca8;
   padding: 0.4rem 1.5rem;
   font-size: 1.2rem;
   border-radius: 2rem;
   cursor: pointer;
   display: flex;
   height: 3rem;
-  color: #8338ec;
-  border: 3px solid transparent;
-  align-items: center;
-  border-color: #8338ec;
-  color: 8338ec;
-  font-size: 24px;
+  color: #480ca8;
 
-  &:hover {
-    scale: -1px;
-    color: #8338ec;
-    border-color: #8338ec;
-    text-shadow: 0 3px 3px #ce38ec;
-  }
+  align-items: center;
+  font-size: 24px;
 `;
