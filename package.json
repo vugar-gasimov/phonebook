@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vugar-gasimov.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://vugar-gasimov.github.io/phonebook/",
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^1.9.7",

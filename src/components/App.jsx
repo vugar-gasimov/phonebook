@@ -2,7 +2,7 @@ import React, { Suspense, lazy, useEffect } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 import NotFound from 'Pages/notFound/NotFound';
-import BgImg from '../images/R.jpg';
+
 import styled from 'styled-components';
 
 import Layout from './Layout';
@@ -79,7 +79,6 @@ export default App;
 
 const Wrapper = styled.div`
   background-color: #023d8a;
-  background-image: url(${BgImg});
 
   min-height: 100vh;
   background-size: cover;

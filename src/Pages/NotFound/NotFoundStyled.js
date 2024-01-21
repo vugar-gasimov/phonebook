@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import BgImg from '../../images/R.jpg';
+import BgImg from '../../images/notFound.jpg';
 import { motion } from 'framer-motion';
 export const Wrapper = styled.div`
   height: 100vh;
