@@ -79,7 +79,6 @@ export default App;
 
 const Wrapper = styled.div`
   background-color: #023d8a;
-
   min-height: 100vh;
   background-size: cover;
   background-position: center;
